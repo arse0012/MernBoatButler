@@ -1,54 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Container, AppBar, Typography, Grow, Grid} from "@material-ui/core";
+import { Avatar, Button, Paper, Container, Typography, Grid } from "@material-ui/core";
+import LockOutlinedIcon from "@material-ui/icons/LockOpenOutlined";
+import useStyles from "./styles";
+import Input from "./Input";
+
+const CompanyLogin = () => {
+    const classes = useStyles();
 
 
-class companyLogin extends Component {
+    const handleSubmit = () => {
 
-    render() {
+    };
 
-        return (
-            <Container maxwitdth="lg">
-                <AppBar className={classes.appBar} position="static" color="inherit">
-                    <div className="row">
-                        <div className="col-md-8 m-auto">
-                            <h1 className="display-4 text-center">NJORD</h1>
-                            <p className="lead text-center">
-                                Company Login
-                            </p>
+    const handleChange = () => {
 
-                            <form noValidate onSubmit={this.onSubmit}>
-                                <div className='form-group'>
-                                    <input
-                                        type='text'
-                                        placeholder='Username'
-                                        name='name'
-                                        className='form-control'
+    };
 
-                                        onChange={this.onChange}
-                                    />
-                                </div>
-                                <br />
-
-                                <div className='form-group'>
-                                    <input
-                                        type='text'
-                                        placeholder='Password'
-                                        name='password'
-                                        className='form-control'
-
-                                        onChange={this.onChange}
-                                    />
-                                </div>
-                            </form>
-                        </div>
+    return (
+        <Container component="main" maxWidth="xs" elevation={5}>
+            <div className={classes.brandContainer} variant="h6" align="center">NJORD
+                    
                     </div>
+            <Paper className={classes.paper}>
+                <Typography variant="h5">Comapany Login</Typography>
+                <form className={classes.form} onSubmit={handleSubmit}>
+                    <Grid container spacing={4}>
+                        <Input name="name" label="Username" handleChange={handleChange} type="autoFocus" />
+                        <Input name="confirmPassword" label="Password" handleChange={handleChange} type="password" />
+                    </Grid>
+                    <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>Sign In</Button>
+                </form>
+            </Paper>
+        </Container>
+    );
+};
 
-                </AppBar>
-            </Container>
-        );
-    }
-}
-
-export default companyLogin;
+export default CompanyLogin;

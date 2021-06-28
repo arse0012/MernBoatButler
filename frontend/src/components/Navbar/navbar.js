@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { AppBar, Typography } from "@material-ui/core";
 
-class Navbar extends Component {
+import useStyles from "./styles";
 
-    render() {
-        return (
-            <div>
-                <div className="nav navbar-dark navbar-expand-lg">
-                    <li className="nav-item"> <Link to="/" className="nav-link">Company Login</Link></li>
-                </div>
 
+const Navbar = () => {
+    const classes = useStyles();
+
+
+    return (
+        <AppBar className={classes.appBar} color="inherit">
+            <div className={classes.brandContainer}>
+                <Typography className={classes.heading} variant="h4" align="center">NJORD</Typography>
+                
             </div>
-        );
-    }
+        </AppBar>
+    );
 }
 
 export default Navbar;

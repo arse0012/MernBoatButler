@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(0),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -14,8 +14,16 @@ export default makeStyles((theme) => ({
     },
   },
   avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    
+    backgroundColor: 'darkblue',
+  },
+  brandContainer: {
+    marginTop: theme.spacing(8),
+    padding: '10px 50px',
+    alignItems: 'center',
+    backgroundColor: 'darkblue',
+    alignItems: 'center',
+    color: 'rgba(255,255,255, 255)',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
